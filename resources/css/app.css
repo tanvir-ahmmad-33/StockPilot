@@ -1,11 +1,182 @@
-@import 'tailwindcss';
+@import url("https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap");
 
-@source '../../vendor/laravel/framework/src/Illuminate/Pagination/resources/views/*.blade.php';
-@source '../../storage/framework/views/*.php';
-@source '../**/*.blade.php';
-@source '../**/*.js';
+@import "tailwindcss";
 
 @theme {
-    --font-sans: 'Instrument Sans', ui-sans-serif, system-ui, sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji',
-        'Segoe UI Symbol', 'Noto Color Emoji';
+  /* Font */
+  --font-sans: "Inter", ui-sans-serif, system-ui, sans-serif;
+
+  /* Brand */
+  --color-brand-950: #061923;
+  --color-brand-900: #0b2633;
+  --color-brand-800: #123847;
+  --color-brand-700: #155066;
+  --color-brand-600: #176b84;
+  --color-brand-500: #1b84a3;
+
+  /* Accent */
+  --color-accent-600: #0284c7;
+  --color-accent-500: #0ea5e9;
+  --color-accent-100: #e0f2fe;
+
+  /* Neutral surfaces */
+  --color-page: #f6f8fb;
+  --color-surface: #ffffff;
+  --color-surface-soft: #f9fbfc;
+  --color-surface-muted: #eef3f6;
+
+  /* Borders */
+  --color-border: #d9e2e8;
+  --color-border-soft: #e8eef2;
+  --color-border-strong: #b8c7d1;
+
+  /* Text */
+  --color-ink: #10202b;
+  --color-ink-soft: #3d4f5c;
+  --color-muted: #6f7f8a;
+  --color-subtle: #94a3ad;
+  --color-inverse: #ffffff;
+  --color-inverse-muted: #c8d7df;
+
+  /* Status */
+  --color-success: #0f9f6e;
+  --color-success-soft: #e8f7f1;
+
+  --color-warning: #c47a00;
+  --color-warning-soft: #fff4df;
+
+  --color-danger: #d92d20;
+  --color-danger-soft: #fff0ee;
+
+  --color-info: #2563eb;
+  --color-info-soft: #eff6ff;
+
+  /* Radius */
+  --radius-xs: 6px;
+  --radius-sm: 8px;
+  --radius-md: 10px;
+  --radius-lg: 12px;
+  --radius-xl: 16px;
+  --radius-2xl: 20px;
+  --radius-card: 18px;
+  --radius-panel: 16px;
+  --radius-input: 10px;
+  --radius-button: 10px;
+  --radius-modal: 20px;
+
+  /* Shadows */
+  --shadow-xs: 0 1px 2px rgba(16, 32, 43, 0.05);
+  --shadow-sm: 0 4px 12px rgba(16, 32, 43, 0.07);
+  --shadow-card: 0 12px 32px rgba(16, 32, 43, 0.08);
+  --shadow-panel: 0 18px 48px rgba(16, 32, 43, 0.10);
+  --shadow-modal: 0 28px 72px rgba(16, 32, 43, 0.22);
+  --shadow-sidebar: 6px 0 28px rgba(6, 25, 35, 0.22);
+  --shadow-button: 0 8px 18px rgba(21, 80, 102, 0.22);
+
+  /* Typography */
+  --text-display: 40px;
+  --text-display--line-height: 1.1;
+  --text-display--letter-spacing: -0.035em;
+  --text-display--font-weight: 700;
+
+  --text-title: 28px;
+  --text-title--line-height: 1.2;
+  --text-title--letter-spacing: -0.025em;
+  --text-title--font-weight: 700;
+
+  --text-heading: 22px;
+  --text-heading--line-height: 1.25;
+  --text-heading--letter-spacing: -0.02em;
+  --text-heading--font-weight: 700;
+
+  --text-subheading: 18px;
+  --text-subheading--line-height: 1.35;
+  --text-subheading--font-weight: 600;
+
+  --text-body: 14px;
+  --text-body--line-height: 1.55;
+  --text-body--font-weight: 400;
+
+  --text-small: 13px;
+  --text-small--line-height: 1.45;
+  --text-small--font-weight: 400;
+
+  --text-label: 13px;
+  --text-label--line-height: 1.35;
+  --text-label--font-weight: 600;
+
+  --text-caption: 12px;
+  --text-caption--line-height: 1.4;
+  --text-caption--font-weight: 500;
+
+  /* Spacing */
+  --spacing-page: 32px;
+  --spacing-section: 24px;
+  --spacing-card: 24px;
+  --spacing-field: 14px;
+}
+
+/* Professional reusable utilities */
+@layer utilities {
+  .bg-app {
+    background: linear-gradient(180deg, #f9fbfc 0%, #f3f7fa 100%);
+  }
+
+  .bg-auth {
+    background:
+      radial-gradient(circle at top center, rgba(14, 165, 233, 0.12), transparent 34%),
+      linear-gradient(135deg, #061923 0%, #0b2633 52%, #041018 100%);
+  }
+
+  .bg-sidebar {
+    background: linear-gradient(180deg, #061923 0%, #0b2633 55%, #041018 100%);
+  }
+
+  .bg-topbar {
+    background: rgba(255, 255, 255, 0.86);
+    backdrop-filter: blur(16px);
+  }
+
+  .bg-primary-button {
+    background: linear-gradient(135deg, #155066 0%, #123847 100%);
+  }
+
+  .bg-primary-button:hover {
+    background: linear-gradient(135deg, #176b84 0%, #155066 100%);
+  }
+
+  .card {
+    background: #ffffff;
+    border: 1px solid #e8eef2;
+    border-radius: 18px;
+    box-shadow: 0 12px 32px rgba(16, 32, 43, 0.08);
+  }
+
+  .panel {
+    background: #ffffff;
+    border: 1px solid #e8eef2;
+    border-radius: 16px;
+    box-shadow: 0 4px 12px rgba(16, 32, 43, 0.07);
+  }
+
+  .input {
+    height: 44px;
+    border-radius: 10px;
+    border: 1px solid #d9e2e8;
+    background: #ffffff;
+    padding: 0 14px;
+    font-size: 14px;
+    color: #10202b;
+    outline: none;
+  }
+
+  .input:focus {
+    border-color: #0ea5e9;
+    box-shadow: 0 0 0 4px rgba(14, 165, 233, 0.12);
+  }
+
+  .modal-backdrop {
+    background: rgba(6, 25, 35, 0.52);
+    backdrop-filter: blur(6px);
+  }
 }
