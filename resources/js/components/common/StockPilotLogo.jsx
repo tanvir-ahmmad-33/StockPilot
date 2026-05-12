@@ -1,39 +1,55 @@
-const StockPilotLogo = ({ className = ""}) => {
+const StockPilotLogo = ({
+    width = "100%",
+    height = "100%",
+    className = "",
+}) => {
     return (
-        <div>
-            <svg
-                viewBox="0 0 64 64"
-                fill="none"
-                xmlns="http://www.w3.org/2000/svg"
-                className={className}
-                aria-hidden="true"
-            >
-                <path
-                    d="M32 6 54 18.5 32 31 10 18.5 32 6Z"
-                    stroke="currentColor"
-                    strokeWidth="5"
-                    strokeLinejoin="round"
-                />
-                <path
-                    d="M10 23v18.5L25.5 50V31.5L10 23Z"
-                    stroke="#0EA5E9"
-                    strokeWidth="5"
-                    strokeLinejoin="round"
-                />
-                <path
-                    d="M54 23v18.5L38.5 50V31.5L54 23Z"
-                    stroke="#0EA5E9"
-                    strokeWidth="5"
-                    strokeLinejoin="round"
-                />
-                <path
-                    d="M32 31v25"
-                    stroke="currentColor"
-                    strokeWidth="5"
-                    strokeLinecap="round"
-                />
-            </svg>
-        </div>
+        <svg
+            width={width}
+            height={height}
+            viewBox="0 0 100 100"
+            fill="none"
+            xmlns="http://www.w3.org/2000/svg"
+            className={className}
+            role="img"
+            aria-label="StockPilot Logo"
+            preserveAspectRatio="xMidYMid meet"
+        >
+            {/* Left Blue Section */}
+            <path
+                d="M12 46 L12 70 L36 86"
+                stroke="#00A0E3"
+                strokeWidth="10"
+                strokeLinecap="round"
+                strokeLinejoin="round"
+            />
+
+            {/* Right Blue Section */}
+            <path
+                d="M88 46 L88 70 L64 86"
+                stroke="#00A0E3"
+                strokeWidth="10"
+                strokeLinecap="round"
+                strokeLinejoin="round"
+            />
+
+            {/* Center Dark Stem */}
+            <path
+                d="M50 56 L50 91"
+                stroke="#082032"
+                strokeWidth="10"
+                strokeLinecap="round"
+            />
+
+            {/* Top Diamond */}
+            <path
+                d="M50 8 L89 30 L50 52 L11 30 Z"
+                stroke="#082032"
+                strokeWidth="10"
+                strokeLinecap="round"
+                strokeLinejoin="round"
+            />
+        </svg>
     );
 };
 

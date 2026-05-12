@@ -23,7 +23,9 @@ const AuthLayout = () => {
                 <aside className="bg-auth relative flex items-center px-5 py-8 text-inverse sm:px-8 sm:py-10 md:px-10 lg:min-h-screen lg:px-16">
                     <div className="relative mx-auto w-full max-w-sm lg:max-w-md">
                         <div className="flex items-center gap-3 sm:gap-4">
-                            <StockPilotLogo className="h-11 w-11 text-white sm:h-14 sm:w-14" />
+                            <div className="flex h-12 w-12 items-center justify-center rounded-2xl bg-white/95 shadow-[0_12px_28px_rgba(14,165,233,0.18)] ring-1 ring-white/20 sm:h-14 sm:w-14">
+                                <StockPilotLogo className="h-9 w-9 sm:h-10 sm:w-10" />
+                            </div>
 
                             <span className="text-2xl font-semibold tracking-[-0.03em] sm:text-[30px]">
                                 Stock Pilot
